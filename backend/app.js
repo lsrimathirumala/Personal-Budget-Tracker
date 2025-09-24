@@ -30,10 +30,10 @@ app.use("/", categoryRouter);
 app.use("/", transactionRouter);
 
 //! Serve frontend (deployment setup)
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend", "build", "index.html"));
+  res.sendFile(path.resolve(__dirname, "../frontend", "dist", "index.html"));
 });
 
 //! Error handler
