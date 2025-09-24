@@ -31,7 +31,6 @@ app.use("/api/v1", transactionRouter);
 
 //!---Serve frontend---
 // This should be placed after your API routes
-const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "..", "frontend", "dist")));
 
 app.get("*", (req, res) => {
