@@ -18,9 +18,13 @@ mongoose
 
 //! Cors config
 const corsOptions = {
-  origin: ["http://localhost:5173"],
+  origin:
+    process.env.NODE_ENV === "production"
+      ? "*" // allow all for production (or omit CORS)
+      : ["http://localhost:5173"],
 };
 app.use(cors(corsOptions));
+
 
 //! Middlewares
 app.use(express.json()); //? Pass incoming json data
