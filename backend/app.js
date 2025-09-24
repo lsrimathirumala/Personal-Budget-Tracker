@@ -17,7 +17,7 @@ mongoose
 
 //! Cors config
 const corsOptions = {
-  origin: ["http://localhost:5173", "https://personal-budget-tracker-frontend-rimd.onrender.com"], // Added placeholder for your deployed frontend
+  origin: ["http://localhost:5173", "personal-budget-tracker-qb1ltvnx2.vercel.app"], // Added placeholder for your deployed frontend
 };
 app.use(cors(corsOptions));
 
