@@ -25,9 +25,11 @@ app.use(cors(corsOptions));
 app.use(express.json()); //?Pass incoming json data
 
 //!Routes
-app.use("/api/v1", userRouter);
-app.use("/api/v1", categoryRouter);
-app.use("/api/v1", transactionRouter);
+app.use("/", userRouter);
+app.use("/", categoryRouter);
+app.use("/", transactionRouter);
+//!Error
+app.use(errorHandler);
 
 //!---Serve frontend---
 // This should be placed after your API routes
