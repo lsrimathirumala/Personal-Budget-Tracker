@@ -24,16 +24,17 @@ app.use(cors(corsOptions));
 //! Middlewares
 app.use(express.json()); //? Pass incoming json data
 
-//! Routes
-app.use("/", userRouter);
-app.use("/", categoryRouter);
-app.use("/", transactionRouter);
+//! API Routes (prefixed with /api)
+app.use("/api/users", userRouter);
+app.use("/api/categories", categoryRouter);
+app.use("/api/transactions", transactionRouter);
 
-//! Serve frontend (deployment setup)
+//! Serve frontend (Vite build)
 app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
+//! Catch-all to serve React frontend for any other route
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend", "dist", "index.html"));
+  res.sendFile(path.resolve(__dirname, "../frontend/dist", "index.html"));
 });
 
 //! Error handler
