@@ -8,10 +8,11 @@ const categoryRouter = require("./routes/categoryRouter");
 const transactionRouter = require("./routes/transactionRouter");
 
 const app = express();
+require("dotenv").config();
 
 //! Connect to mongodb
 mongoose
-  .connect("mongodb://localhost:27017/mern-expenses")
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("DB Connected"))
   .catch((e) => console.log(e));
 
