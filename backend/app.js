@@ -17,7 +17,7 @@ mongoose
 
 //! Cors config
 const corsOptions = {
-  origin: ["http://localhost:5173", "YOUR_DEPLOYED_FRONTEND_URL"], // Added placeholder for your deployed frontend
+  origin: ["http://localhost:5173", "https://personal-budget-tracker-frontend-rimd.onrender.com"], // Added placeholder for your deployed frontend
 };
 app.use(cors(corsOptions));
 
