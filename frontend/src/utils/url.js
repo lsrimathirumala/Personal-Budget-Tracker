@@ -1,1 +1,1 @@
-export const BASE_URL = "https://personal-budget-tracker-backend-1mkh.onrender.com";
+export const BASE_URL = "http://localhost:8000/api/v1";
