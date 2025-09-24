@@ -7,25 +7,25 @@ const transactionRouter = express.Router();
 
 //!add
 transactionRouter.post(
-  "/transactions/create",
+  "/create",
   isAuthenticated,
   transactionController.create
 );
 //! lists
 transactionRouter.get(
-  "/transactions/lists",
+  "/lists",
   isAuthenticated,
   transactionController.getFilteredTransactions
 );
 //! update
 transactionRouter.put(
-  "/transactions/update/:id",
+  "/update/:id",
   isAuthenticated,
   transactionController.update
 );
 //! delete
 transactionRouter.delete(
-  "/transactions/delete/:id",
+  "/delete/:id",
   isAuthenticated,
   transactionController.delete
 );

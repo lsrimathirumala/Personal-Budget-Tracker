@@ -6,25 +6,25 @@ const categoryRouter = express.Router();
 
 //!add
 categoryRouter.post(
-  "/categories/create",
+  "/create",
   isAuthenticated,
   categoryController.create
 );
 //! lists
 categoryRouter.get(
-  "/categories/lists",
+  "/lists",
   isAuthenticated,
   categoryController.lists
 );
 //! update
 categoryRouter.put(
-  "/categories/update/:categoryId",
+  "/update/:categoryId",
   isAuthenticated,
   categoryController.update
 );
 //! delete
 categoryRouter.delete(
-  "/categories/delete/:id",
+  "/delete/:id",
   isAuthenticated,
   categoryController.delete
 );
