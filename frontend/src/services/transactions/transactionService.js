@@ -13,7 +13,7 @@ export const addTransactionAPI = async ({
   amount,
 }) => {
   const response = await axios.post(
-    `${BASE_URL}/transactions/create`,
+    `${BASE_URL}/api/transactions/create`,
     {
       category,
       date,
@@ -33,7 +33,7 @@ export const addTransactionAPI = async ({
 //! update
 export const updateCategoryAPI = async ({ name, type, id }) => {
   const response = await axios.put(
-    `${BASE_URL}/categories/update/${id}`,
+    `${BASE_URL}/api/categories/update/${id}`,
     {
       name,
       type,
@@ -49,7 +49,7 @@ export const updateCategoryAPI = async ({ name, type, id }) => {
 };
 //! delete
 export const deleteCategoryAPI = async (id) => {
-  const response = await axios.delete(`${BASE_URL}/categories/delete/${id}`, {
+  const response = await axios.delete(`${BASE_URL}/api/categories/delete/${id}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -64,7 +64,7 @@ export const listTransactionsAPI = async ({
   startDate,
   endDate,
 }) => {
-  const response = await axios.get(`${BASE_URL}/transactions/lists`, {
+  const response = await axios.get(`${BASE_URL}/api/transactions/lists`, {
     params: { category, endDate, startDate, type },
     headers: {
       Authorization: `Bearer ${token}`,
